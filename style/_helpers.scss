@@ -1,0 +1,14 @@
+/* Helper classes for formatting */
+.no-decoration {
+  list-style-type: none;
+}
+
+.shadow {
+  -webkit-box-shadow: 5px 0px 15px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    5px 0px 15px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         5px 0px 15px 0px rgba(50, 50, 50, 0.75);
+}
+
+.width-media-object {
+  width: 100%;
+}
