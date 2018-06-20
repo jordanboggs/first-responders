@@ -1,0 +1,12 @@
+extends ../layouts/layout.pug
+include ../components/pageHeader.pug
+
+block append head
+  title First Responders
+  style.
+    .parallax {
+      background-image: url("./assets/watermarked/stock-photo-emergency-medical-service-response-in-the-city-ambulance-cars-on-the-rush-street-during-rain-view-786600052-cropped.jpg");
+    }
+
+block content
+  +pageHeader("index")

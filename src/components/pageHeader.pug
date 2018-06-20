@@ -1,0 +1,79 @@
+mixin pageHeader(activePage)
+  .jumbotron-fluid.parallax
+    header.header
+      nav.navbar.navbar-expand-lg.navbar-dark.mb-5.navbar-darken
+        button(
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        )
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarSupportedContent
+          ul.navbar-nav.mr-auto.ml-auto
+            li(
+              class={active: activePage === 'index'} 
+              class=['nav-item']
+            )
+              a(
+                href='./index.html'
+                class='nav-link'
+              ) Home
+            li(
+              class={active: activePage === 'dispatchers'} 
+              class=['nav-item']
+            )
+              a(
+                href='./dispatchers.html'
+                class='nav-link'
+              ) Dispatchers
+            li(
+              class={active: activePage === 'de-escalation'} 
+              class=['nav-item']
+            )
+              a(
+                href='./de-escalation.html'
+                class='nav-link'
+              ) De-escalation
+            li(
+              class={active: activePage === 'laws'} 
+              class=['nav-item']
+            )
+              a(
+                href='./laws.html'
+                class='nav-link'
+              ) Laws
+            li(
+              class={active: activePage === 'partnerships'} 
+              class=['nav-item']
+            )
+              a(
+                href='./partnerships.html'
+                class='nav-link'
+              ) Partnerships
+            li(
+              class={active: activePage === 'diversion-referral'} 
+              class=['nav-item']
+            )
+              a(
+                href="./diversion-referral.html"
+                class="nav-link"
+              ) Diversion &amp; Referral
+      h1 Behavioral Health Crisis Intervention for First Responders
+      if activePage === "index"
+        h2.text-uppercase.pb-5 Training &amp; Resources
+      else if activepage === "dispatchers"
+        h2.text-uppercase.pb-5 Dispatchers
+      else if activepage === "de-escalation"
+        h2.text-uppercase.pb-5 De-escalation
+      else if activepage === "laws"
+        h2.text-uppercase.pb-5 Laws
+      else if activepage === "partnerships"
+        h2.text-uppercase.pb-5 Partnerships
+      else if activepage === "diversion-referral"
+        h2.text-uppercase.pb-5 Diversion &amp; Referral
+      else
+        h1(style={color: 'red'}) ERROR: Bad variable passed to pageHeader.pug
