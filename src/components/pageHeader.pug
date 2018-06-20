@@ -65,15 +65,15 @@ mixin pageHeader(activePage)
       h1 Behavioral Health Crisis Intervention for First Responders
       if activePage === "index"
         h2.text-uppercase.pb-5 Training &amp; Resources
-      else if activepage === "dispatchers"
+      else if activePage === 'dispatchers'
         h2.text-uppercase.pb-5 Dispatchers
-      else if activepage === "de-escalation"
+      else if activePage === "de-escalation"
         h2.text-uppercase.pb-5 De-escalation
-      else if activepage === "laws"
+      else if activePage === "laws"
         h2.text-uppercase.pb-5 Laws
-      else if activepage === "partnerships"
+      else if activePage === "partnerships"
         h2.text-uppercase.pb-5 Partnerships
-      else if activepage === "diversion-referral"
+      else if activePage === "diversion-referral"
         h2.text-uppercase.pb-5 Diversion &amp; Referral
       else
         h1(style={color: 'red'}) ERROR: Bad variable passed to pageHeader.pug

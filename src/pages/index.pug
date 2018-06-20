@@ -1,5 +1,6 @@
 extends ../layouts/layout.pug
 include ../components/pageHeader.pug
+include ../components/card.pug
 
 block append head
   title First Responders
@@ -10,3 +11,14 @@ block append head
 
 block content
   +pageHeader("index")
+  main.container
+    h1.text-primary Welcome!
+    p.lead.
+      #[em Behavior Health Crisis Intervention for First Responders] is a statewide training curriculum aimed at first responders (including law enforcement, emergency medical services, co-responders and others) that are involved with behavioral health crisis intervention.
+    p The Colorado Office of Behavioral Health (OBH) in partnership with The Rocky Mountain Public Health Training Center (RM-PHTC) has developed this toolkit to address the training needs of first responders who work with people experiencing behavioral health crises, which includes both mental health and/or substance use related emergencies. The aim is to increase knowledge of and access to training and resources across Colorado.
+    section
+      .row
+        include ../data/index.pug
+        each section in sections
+          +card(section.imgUrl, section.name, section.description, section.list, section.url)
+          
