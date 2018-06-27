@@ -1,0 +1,42 @@
+mixin mediaObject(link, image, title, paragraphs, isDownloadable)
+  .border-left.border-primary.mb-3.pl-3.shadow
+    .row
+      .col-12.col-md-4
+        a(
+          href=link
+          target="_blank"
+          rel="nofollow"
+        )
+          img(
+            src=image
+            alt=title
+            class="mr-3 mb-3 img-fluid"
+          )
+      .col-12.col-md-8
+        h5.mt-0
+          a(
+            href=link
+            target="_blank"
+            rel="nofollow"
+          ) #{title}
+        // Paragraphs
+        each paragraph in paragraphs
+          p.pr-3!= paragraph
+        // If is download link, download button. Else visit button
+        if isDownloadable
+          a(
+            href=link
+            target="blank"
+            rel="nofollow"
+            class="btn btn-primary mb-3"
+          ) Download
+        else if link === "#"
+          div
+        else
+          a(
+            href=link
+            target="blank"
+            rel="nofollow"
+            class="btn btn-primary mb-3"
+          ) Visit
+
