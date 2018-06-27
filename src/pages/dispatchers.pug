@@ -1,0 +1,22 @@
+extends ../layouts/layout.pug
+include ../components/pageHeader.pug
+include ../components/mediaObject.pug
+
+block append head
+  title First Responders&mdash; Dispatchers
+  style.
+    .parallax {
+      background-image: url("./assets/watermarked/stock-photo-fire-dispatching-desk-with-telephone-1055769587.jpg");
+    }
+
+block content
+  +pageHeader("dispatchers")
+  main.container
+    section
+      p.pr-3.lead The dispatcher is the first person to ask questions when someone calls in about an emergency. An experienced, well-trained dispatcher is able to gather a lot of high quality, vitally important information that can help first responders form an early understanding of what they will be facing upon arrival at the emergency scene. A well-trained, experienced dispatcher should be viewed as a critical component of the command management team. However, the knowledge, skills and abilities needed for a dispatcher to support an incident operation should not be assumed. Dispatchers need to be trained on how to support incident operations.
+    include ../data/dispatchers.pug
+    each section in sections
+      section
+        h2.text-secondary #{section.title}
+        each training in section.trainings
+          +mediaObject(training.link, training.image, training.title, training.paragraphs, training.isDownloadable)
